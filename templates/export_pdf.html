@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+
+<head>
+    <!-- Required meta tags -->
+    <meta http-equiv="content-language" content="tr-TR">
+    <meta charset="utf-8" />
+    <style>
+        table {
+            width: 100%;
+            border: 1px solid #000;
+        }
+
+        th,
+        td {
+            width: 25%;
+            text-align: left;
+            vertical-align: top;
+            border: 1px solid #000;
+            border-collapse: collapse;
+            padding: 0.3em;
+            caption-side: bottom;
+        }
+
+        caption {
+            padding: 0.3em;
+            color: #fff;
+            background: #000;
+        }
+
+        th {
+            background: #eee;
+        }
+    </style>
+    <title>{{ baslik }}</title>
+</head>
+
+<body>
+    <center>
+        <h2>{{ baslik }}</h2>
+    </center>
+    {% if graph %}
+    <img class="ui fluid image" src="data:image/png;base64, {{ graph | safe }}" alt="" srcset="">
+    {% endif %}
+    {% if data %}
+
+    <table >
+        <thead>
+            <tr>
+                <th>Tarih</th>
+                <th>Bugunkü Vaka</th>
+                <th>Bugunkü Test</th>
+                <th>Bugunkü Vefat</th>
+                <th>Bugunkü İyileşen</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in data %}
+            <tr>
+                <td class="center aligned">{{i.Tarih}}</td>
+                <td>{{i.bugunkuVaka}}</td>
+                <td>{{i.bugunkuTest}}</td>
+                <td>{{i.bugunkuVefat}}</td>
+                <td>{{i.bugunkuIyilesen}}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+
+
+        <tfoot>
+            <tr>
+                <th class="center aligned">Toplam</th>
+                <th>{{ sumOfdata.tVaka }}</th>
+                <th>{{ sumOfdata.tTest }}</th>
+                <th>{{ sumOfdata.tVefat }}</th>
+                <th>{{ sumOfdata.tIyilesen }}</th>
+            </tr>
+        </tfoot>
+    </table>
+    {% endif %}
+</body>
+
+</html>

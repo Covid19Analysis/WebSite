@@ -1,0 +1,1 @@
+web: gunicorn bitirmeSon.wsgi --log-file -

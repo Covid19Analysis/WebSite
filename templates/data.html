@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block title %} {{title}} {% endblock title %}
+
+{% block content %}
+<div class="ui container">
+    <h1 class="ui huge header">Hamit deneme 1 </h1>
+    <div>
+        {% if hata_msj %}
+            <div class="ui red message medium">
+                Hamit
+            </div>
+        {% else %}
+            <div class="ui green message medium">
+                Belirli tarih aralığında Covid19 verilerine ulaşmak için seçin yapınız. Ardından verileri listelemek için <strong><em>Verileri Getir</em></strong>
+                butonuna basınız. Grafik türü seçmediğiniz takdirde sadece veriler listelenecektir. Verileri listeledikten sonra <strong>CSV, Excel</strong>
+                ve <strong>PDF</strong> formatında indirme yapabilirsiniz.
+            </div>
+        {% endif %}
+        <br>
+        <form action="" method="POST" class="ui form">
+            {% csrf_token %}
+            
+            <div class="two fields">
+                <div class="field">
+                    <label>Başlangış tarihi:</label>
+                    <input type="date" name="date_from" placeholder="ilk tarih" value="2020-03-11">
+                    
+                </div>
+                <div class="field">
+                    <label>Bitiş tarihi:</label>
+                    <input type="date" name="date_to" placeholder="Son tarih" value="">
+                </div>
+            </div>
+            <div class="two fields">
+                <div class="field">
+                    <label>Grafik Şekli :</label>
+                    <div class="ui selection dropdown">
+                        <input type="hidden" name="grafik_turu">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">---------</div>
+                        <div class="menu">
+                            <div class="item" value="bar">Bar grafik</div>
+                            <div class="item" value="line">Çizgi grafik</div>
+                            <div class="item" value="count">Sayım grafiği</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label>&nbsp;</label>
+                    <button class="ui primary button" type="submit">Verileri Getir</button>
+                    
+                    {% if request.POST %}{% if data %}
+                        <a class="ui button secondary" href="{% url 'data:export-csv'  %}" target="_self"> 
+                            <i aria-hidden="true" class="download icon"></i>&nbsp;CSV indir</a> 
+                        
+                        <a class="ui button positive" href="{% url 'data:export-pdf'  %}" target="_blank">
+                            <i aria-hidden="true" class="download icon"></i>&nbsp;PDF indir</a>
+                    {% endif %}{% endif %}
+                </div>
+            </div>
+        </form>
+
+        {% if request.POST %}
+            {% if graph %}
+            <img src="data:image/png;base64, {{ graph | safe }}" alt="" srcset="">
+            {% endif %}
+            {% if data %}
+            
+
+            <table class="ui compact celled inverted teal large table">
+                <thead>
+                  <tr>
+                    <th>Tarih</th>
+                    <th>Bugunkü Vaka</th>
+                    <th>Bugunkü Test</th>
+                    <th>Bugunkü Vefat</th>
+                    <th>Bugunkü İyileşen</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {% for i in data %}
+                <tr>
+                  <td class="center aligned">{{i.Tarih}}</td>
+                  <td>{{i.bugunkuVaka}}</td>
+                  <td>{{i.bugunkuTest}}</td>
+                  <td>{{i.bugunkuVefat}}</td>
+                  <td>{{i.bugunkuIyilesen}}</td>
+                  
+                </tr>
+                {% endfor %}
+
+                </tbody>
+                
+                
+                <tfoot>
+                    <tr>
+                        <th class="center aligned">Toplam</th>
+                        <th>{{ sumOfdata.tVaka }}</th>
+                        <th>{{ sumOfdata.tTest }}</th>
+                        <th>{{ sumOfdata.tVefat }}</th>
+                        <th>{{ sumOfdata.tIyilesen }}</th>
+                    </tr>
+                </tfoot>
+            </table>
+            {% endif %}
+        {% endif %}
+        <br><br>
+    </div>
+
+</div>
+
+{% endblock content %}

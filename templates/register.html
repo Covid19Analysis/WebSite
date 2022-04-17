@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{title}} {% endblock title %}
+
+{% block content %}
+
+<div class="ui container">
+    <div class="ui container">
+        <div class="ui huge header">Üye Kayıt Formu</div>
+    </div>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" name="Create User" value="Gönder">
+    </form>
+    
+</div>
+
+
+ 
+{% endblock content %}

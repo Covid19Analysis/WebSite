@@ -1,0 +1,39 @@
+<div class="ui attached stackable menu">
+  <div class="ui container">
+    <a class="item" href="{% url 'index'  %}">
+      <i class="home icon"></i> Ana Sayfa
+    </a>
+    <a class="item" href="{% url 'data:main-data'  %}">
+      <i class="grid layout icon"></i> Data
+    </a>
+    <a class="item" href="{% url 'blog:index'  %}"> <i class="mail icon"></i> Blog </a>
+    <a class="item" href="{% url 'country'  %}"> <i class="mail icon"></i> Ülkeler </a>
+    <div class="ui simple dropdown item">
+      Diğer
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" href="{% url 'register'  %}"><i class="signup icon"></i> Register</a>
+        <a class="item" href="{% url 'login'  %}"><i class="user icon"></i> Login</a>
+        
+        <a class="item" onclick="alert('Veri giriş modülü henüz aktif değil.')"><i class="upload icon"></i> Veri Gir</a>
+        <a class="item" href="{% url 'index'  %}admin"><i class="settings icon"></i> Admin</a>
+        <a class="item" href="{% url 'about'  %}"><i class="globe icon"></i> Hakkımızda </a>
+      </div>
+    </div>
+    <div class="right item">
+      <form action="" method="post" class="ui small form">
+        <div class="ui input">
+          {% if client_ip %}
+          <p class="ui basic image label">
+            <img src="https://semantic-ui.com/images/avatar/small/elliot.jpg" alt="" />
+            {{ client_ip }}
+          </p>
+          {% endif %}
+
+          <!-- <input type="text" placeholder="Mail Listesi" size="5" />
+          <input class="ui blue button" type="button" value="Abone Ol"> -->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

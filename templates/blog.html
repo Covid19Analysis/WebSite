@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{title}} {% endblock title %}
+
+{% block content %}
+
+<div class="ui container">
+    <div class="ui main stackable grid container">
+      <main class="twelve wide column">
+        <article class="content post-358 page type-page status-publish wpautop chap-post-layout-default">
+          <!-- <h1 class="invisible">Sosyal Medya Verileri ve Analizleri (COVID19)</h1> -->
+          <div id="chap-demos" class="ui stackable vertically divided middle aligned grid">
+<!-- POSTS - START-->
+            {% for post in posts %}
+            <div class="row">
+              <!-- <div class="six wide center aligned column">
+                <div class="ui medium bordered rounded image">
+                    <img src="" alt="">
+                </div>
+              </div> -->
+              <div class="sixteen wide column raised">
+                <div class="ui piled segment container"><h2 class="ui header">{{ post.title }}</h2>
+                <p>{{ post.content | safe }}</p></div>
+                <a href="" target="_self" class="ui primary left labeled icon button">
+                    <i aria-hidden="true" class="svg external icon">
+                    <span class="i-w"><span class="i-c"><svg style="width:100%;height:100%" viewBox="0 0 512 512"></svg></span></span>
+                    </i>Daha fazla</a>
+                <a href="" target="_self" data-tooltip="Accelerated Mobile Pages" data-inverted="true" class="ui secondary icon button">
+                    <i aria-hidden="true" class="svg lightning icon">
+                        <span class="i-w"><span class="i-c"><svg style="width:70%;height:100%" viewBox="0 0 320 512"></svg></span></span>
+                    </i>Düzenle</a>
+                    <a class="ui teal image label" href="mailto:{{ post.user.email }}">
+                      <img src="{% static 'nan.jpg' %}">
+                      {{ post.user.get_short_name }}
+                      <div class="detail">{{ post.user }}</div>
+                    </a>
+              </div> 
+            </div>
+            {% endfor %}
+<!-- POSTS - END-->
+
+          </div>
+        </article>
+        <div class="ui hidden clearing divider"></div>
+      </main>
+
+      <aside id="chap-primary-sidebar" class="four wide sidebar column">
+
+        <section class="ui basic vertical segment sidebar-widget widget recent-posts-3 widget_recent_entries">
+          <h2 class="ui header">Son Gönderiler</h2>
+          <ul class="ui fluid vertical default bulletless list">
+            {% for post in posts %}
+            <li class="item"> <a href="" class="header">{{ post.title }}</a> <span class="post-date description">{{ post.publish_date}}</span></li>
+            {% endfor %}
+          </ul>
+        </section>
+<!-- 
+        <section class="ui basic vertical segment sidebar-widget widget categories-3 widget_categories">
+          <h2 class="ui header">Categories</h2>
+  
+          <div class="ui fluid vertical default bulletless list" role="list">
+            <div class="item" role="listitem"><div class="header"><a href="https://chap.website/category/changelog/">Changelog</a></div></div>
+            <div class="item" role="listitem"><div class="header"><a href="https://chap.website/category/getting-started/">Getting started</a></div></div>
+            <div class="item" role="listitem"><div class="header"><a href="https://chap.website/category/how-to/">How to</a></div></div>
+            <div class="item" role="listitem"><div class="header"> <a href="https://chap.website/category/plugins/">Plugins</a></div>
+            <div class="list" role="list"><div class="item" role="listitem">
+                <div class="header"> <a href="https://chap.website/category/plugins/recommended-plugins/">Recommended plugins</a></div></div>
+            <div class="item" role="listitem">
+                <div class="header"> <a href="https://chap.website/category/plugins/supported-plugins/">Supported plugins</a></div></div></div></div>
+            
+            <div class="item" role="listitem"><div class="header"> <a href="https://chap.website/category/uncategorized/">Uncategorized</a></div></div>
+            <div class="item" role="listitem"><div class="header"> <a href="https://chap.website/category/wordpress/">WordPress tips</a></div></div>
+          </div>
+        </section>
+   -->
+      </aside>
+    </div>
+  </div>
+  
+  
+{% endblock content %}
