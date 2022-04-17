@@ -124,6 +124,19 @@ def country(request):
         
     }
     return render(request, "countries.html", context)
+def grafik(request):
+    context = {
+        
+        "client_ip": get_client_ip(request),
+    }
+    return render(request, "grafik.html", context)
+
+def yorum(request):
+    context = {
+        "title": "Yorum",
+        "client_ip": get_client_ip(request),
+    }
+    return render(request, "yorum.html", context)
 
 def chart_select_view(request):
     global graph
