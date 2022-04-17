@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
+
 {% load static %}
 {% block title %} {{title}} {% endblock title %}
 
 {% block content %}
 
 <div class="ui container">
+  
     <div class="ui main stackable grid container">
       <main class="twelve wide column">
         <article class="content post-358 page type-page status-publish wpautop chap-post-layout-default">
@@ -26,9 +28,13 @@
                     <span class="i-w"><span class="i-c"><svg style="width:100%;height:100%" viewBox="0 0 512 512"></svg></span></span>
                     </i>Daha fazla</a>
                 <a href="" target="_self" data-tooltip="Accelerated Mobile Pages" data-inverted="true" class="ui secondary icon button">
-                    <i aria-hidden="true" class="svg lightning icon">
+                    <i aria-hidden="true" class="edit icon ">
                         <span class="i-w"><span class="i-c"><svg style="width:70%;height:100%" viewBox="0 0 320 512"></svg></span></span>
-                    </i>Düzenle</a>
+                    </i> Düzenle</a>
+                <a href="" target="_self" class="ui red button">
+                    <i aria-hidden="true" class="heart outline icon">
+                      <span class="i-w"><span class="i-c"></span></span>
+                    </i>Beğen</a>
                     <a class="ui teal image label" href="mailto:{{ post.user.email }}">
                       <img src="{% static 'nan.jpg' %}">
                       {{ post.user.get_short_name }}

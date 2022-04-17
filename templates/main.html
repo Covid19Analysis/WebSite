@@ -4,11 +4,62 @@
 
 {% block content %}
 <div class="ui container">
-    <div class="ui container">
-        <div class="ui huge header">Ana Sayfa</div>
-    </div>
-    <br><img class="ui fluid image" src="https://covid19.saglik.gov.tr/assets/images/covidhaftalik.png" alt="">
+    <div class="ui huge header">Ana Sayfa</div>
+</div>
+<div class="ui container">
     
+    <br><img class="ui fluid image" src="https://covid19.saglik.gov.tr/assets/images/covidhaftalik.png" alt="">
+    <div class="overlay">
+        <div class="text">Dünya geneline yayılan COVID-19 salgınının Türkiye'de tespit edilen ilk vakası Sağlık Bakanlığı 
+            tarafından 11 Mart günü açıklandı. Ülkedeki virüse bağlı ilk ölüm ise 15 Mart 2020'de gerçekleşti. 
+            Sağlık Bakanı Fahrettin Koca, 1 Nisan 2020'de yaptığı açıklamada koronavirüs vakalarının tüm Türkiye'ye yayıldığını açıkladı.
+            15 Nisan 2022 itibarıyla Türkiye'de koronavirüs ile enfekte olmuş toplam hasta sayısının 14.987.583 olduğu ve mevcut hastalardan
+            975 kişinin yoğun bakımda tedavi görmekte olduğu; şimdiye kadar iyileşen hasta sayısının 14.719.749 ve ölen hasta sayısının toplam 
+            98.532 kişi olduğu bildirildi. Bugüne kadar toplam 156.868.643 test yapıldı. 14 Ocak 2021'de başlayan aşı uygulaması kapsamında 
+            5 Mayıs 2021 itibarıyla toplam 24 milyon 278 bin 886 kişiye aşı yapıldı. Bunlardan 14 milyon 327 bin 674 kişiye birinci doz aşı 
+            uygulanırken 9 milyon 951 bin 212 kişiye ise ikinci doz aşı uygulandı</div>
+    </div>
 </div>
 
+<style>
+    .container {
+      position: relative;
+      width: 50%;
+    }
+    
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: #008CBA;
+    }
+    
+    .container:hover .overlay {
+      opacity: 1;
+    }
+    
+    .text {
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    </style>
 {% endblock content %}

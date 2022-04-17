@@ -4,10 +4,11 @@
       <i class="home icon"></i> Ana Sayfa
     </a>
     <a class="item" href="{% url 'data:main-data'  %}">
-      <i class="grid layout icon"></i> Veri
+      <i class="grid layout icon"></i> Data
     </a>
     <a class="item" href="{% url 'blog:index'  %}"> <i class="mail icon"></i> Blog </a>
-    <a class="item" href="{% url 'country'  %}"> <i class="mail icon"></i> Ülkeler </a>
+    <a class="item" href="{% url 'grafik'  %}"><i class="chart bar icon"></i> Grafikler </a>
+    <a class="item" href="{% url 'yorum'  %}"><i class="file icon"></i> Yorumlar </a>
     <div class="ui simple dropdown item">
       Diğer
       <i class="dropdown icon"></i>
@@ -18,6 +19,7 @@
         <a class="item" onclick="alert('Veri giriş modülü henüz aktif değil.')"><i class="upload icon"></i> Veri Gir</a>
         <a class="item" href="{% url 'index'  %}admin"><i class="settings icon"></i> Admin</a>
         <a class="item" href="{% url 'about'  %}"><i class="globe icon"></i> Hakkımızda </a>
+        
       </div>
     </div>
     <div class="right item">
