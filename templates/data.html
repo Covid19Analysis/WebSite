@@ -29,7 +29,7 @@
                 </div>
                 <div class="field">
                     <label>Bitiş tarihi:</label>
-                    <input type="date" name="date_to" placeholder="Son tarih" value="">
+                    <input type="date" name="date_to" placeholder="Son tarih" value="2021-07-05">
                 </div>
             </div>
             <div class="two fields">
@@ -38,7 +38,7 @@
                     <div class="ui selection dropdown">
                         <input type="hidden" name="grafik_turu">
                         <i class="dropdown icon"></i>
-                        <div class="default text">---------</div>
+                        <div class="default text">Bar grafik</div>
                         <div class="menu">
                             <div class="item" value="bar">Bar grafik</div>
                             <div class="item" value="line">Çizgi grafik</div>
@@ -49,6 +49,7 @@
                 <div class="field">
                     <label>&nbsp;</label>
                     <button class="ui primary button" type="submit">Verileri Getir</button>
+                    
                     
                     {% if request.POST %}{% if data %}
                         <a class="ui button secondary" href="{% url 'data:export-csv'  %}" target="_self"> 
@@ -76,6 +77,10 @@
                     <th>Bugunkü Test</th>
                     <th>Bugunkü Vefat</th>
                     <th>Bugunkü İyileşen</th>
+                    <th>Ağır Hasta</th>
+                    <th>Zatürre Oranı(%)</th>
+                    <th>Sokağa Çıkma Yasağı</th>
+                    <th>Tüm Ülke</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -86,6 +91,10 @@
                   <td>{{i.bugunkuTest}}</td>
                   <td>{{i.bugunkuVefat}}</td>
                   <td>{{i.bugunkuIyilesen}}</td>
+                  <td>{{i.agirHasta}}</td>
+                  <td>{{i.hastalardaZaturreOrani}}</td>
+                  <td>{{i.sokagaCikmaYasagi}}</td>
+                  <td>{{i.tumUlke}}</td>
                   
                 </tr>
                 {% endfor %}
@@ -100,6 +109,23 @@
                         <th>{{ sumOfdata.tTest }}</th>
                         <th>{{ sumOfdata.tVefat }}</th>
                         <th>{{ sumOfdata.tIyilesen }}</th>
+                        <th>{{ sumOfdata.tAgirHasta }}</th>
+                        <th>None</th>
+                        <th>None</th>
+                        <th>None</th>
+                    </tr>
+                </tfoot>
+                <tfoot>
+                    <tr>
+                        <th class="center aligned">Ortalma</th>
+                        <th>{{ meanOfdata.OVaka }}</th>
+                        <th>{{ meanOfdata.OTest }}</th>
+                        <th>{{ meanOfdata.OVefat }}</th>
+                        <th>{{ meanOfdata.OIyilesen }}</th>
+                        <th>{{ meanOfdata.OAgirHasta }}</th>
+                        <th>{{ meanOfdata.OZature }}</th>
+                        <th>None</th>
+                        <th>None</th>
                     </tr>
                 </tfoot>
             </table>

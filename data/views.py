@@ -154,9 +154,9 @@ def chart_select_view(request):
         .rename({"tarih": "Tarih"}, axis=1)
         .drop(
             {
-                "hastalardaZaturreOrani",
+               #"hastalardaZaturreOrani",
                 "toplamTest",
-                "toplamVaka",
+                #"toplamVaka",
                 "toplamVefat",
 
                 "toplamIyilesenHasta",
@@ -214,6 +214,18 @@ def chart_select_view(request):
         "tTest": df2["bugunkuTest"].sum(),
         "tVefat": df2["bugunkuVefat"].sum(),
         "tIyilesen": df2["bugunkuIyilesen"].sum(),
+        "tAgirHasta": df2["agirHasta"].sum(),
+        #"tZature": df2["hastalardaZaturreOrani"].mean(),
+        
+    }
+    ortalama_veri = {  
+        "OVaka": round(df2["bugunkuVaka"].mean(),2),
+        "OTest": round(df2["bugunkuTest"].mean(),2),
+        "OVefat": round(df2["bugunkuVefat"].mean(),2),
+        "OIyilesen": round(df2["bugunkuIyilesen"].mean(),2),
+        "OAgirHasta": round(df2["agirHasta"].mean(),2),
+        "OZature": round(df2["hastalardaZaturreOrani"].mean(),2),
+        
     }
     context = {
         "title": "Data Sayfası",
@@ -221,6 +233,7 @@ def chart_select_view(request):
         "graph": graph,
         "data": data,
         "sumOfdata": toplam_veri,
+        "meanOfdata": ortalama_veri,
     }
     return render(request, template_name=template_name, context=context)
 
