@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %} {{title}} {% endblock title %}
 
 {% block content %}
+
+<style>.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }</style>
+
 <div class="ui container">
     <h1 class="ui huge header">Data Ana Sayfası</h1>
     <div>
@@ -38,7 +47,7 @@
                     <div class="ui selection dropdown">
                         <input type="hidden" name="grafik_turu">
                         <i class="dropdown icon"></i>
-                        <div class="default text">Bar grafik</div>
+                        <div class="default text">---------</div>
                         <div class="menu">
                             <div class="item" value="bar">Bar grafik</div>
                             <div class="item" value="line">Çizgi grafik</div>
@@ -46,6 +55,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="field">
                     <label>&nbsp;</label>
                     <button class="ui primary button" type="submit">Verileri Getir</button>
@@ -59,8 +69,12 @@
                             <i aria-hidden="true" class="download icon"></i>&nbsp;PDF indir</a>
                     {% endif %}{% endif %}
                 </div>
+                
             </div>
+
+           
         </form>
+        <img src="{% static 'images/grafik5.png' %}" style="width:90%", class="center">
 
         {% if request.POST %}
             {% if graph %}
@@ -135,5 +149,7 @@
     </div>
 
 </div>
+
+
 
 {% endblock content %}
