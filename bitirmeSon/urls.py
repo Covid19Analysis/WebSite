@@ -28,10 +28,11 @@ urlpatterns = [
     path("login/", data.views.login, name="login"),
     path("register/", data.views.register, name="register"),
     path("about/", data.views.about, name="about"),
-    path("countries/", data.views.country, name="country"),
+    path("grafik/", data.views.grafik ,name='grafik'), # grafik sayfası için
+     path("yorum/", data.views.yorum ,name='yorum'), # yorum
     path("data/", include("data.urls", namespace='data'),name="data-index"),
     path("blog/", include("blog.urls", namespace='blog'),name="blog-index"),
-
+   
     
 
 ]
