@@ -19,8 +19,13 @@
     
     <title>{% block title %} {% endblock title %} | Covid19</title>
   </head>
-
+<style>
+  body{
+    background-color: rgb(207, 207, 207);
+  }
+</style>
   <body>
+    
     {% include 'navbar.html' %}
     <br>
       {% block content %} 
@@ -33,4 +38,5 @@
     
 
   </body>
+  
 </html>

@@ -234,6 +234,7 @@ def chart_select_view(request):
         "data": data,
         "sumOfdata": toplam_veri,
         "meanOfdata": ortalama_veri,
+        "client_ip": get_client_ip(request),
     }
     return render(request, template_name=template_name, context=context)
 

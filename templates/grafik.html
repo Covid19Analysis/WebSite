@@ -33,6 +33,7 @@ img {
 /* Add a pointer when hovering over the thumbnail images */
 .cursor {
   cursor: pointer;
+  
 }
 
 /* Next & previous buttons */
@@ -76,9 +77,9 @@ img {
 /* Container for image text */
 .caption-container {
   text-align: center;
-  background-color: #222;
+  background-color: #C58342;
   padding: 2px 16px;
-  color: white;
+  color: black;
 }
 
 .row:after {
@@ -96,7 +97,9 @@ img {
 /* Add a transparency effect for thumnbail images */
 .demo {
   opacity: 0.6;
+  
 }
+
 
 .active,
 .demo:hover {
@@ -163,13 +166,13 @@ img {
   
     <!-- Image text -->
     <div class="caption-container">
-      <p id="caption"></p>
+      <p id="caption" ></p>
     </div>
   
     <!-- Thumbnail images -->
     <div class="row">
-      <div class="column">
-        <img class="demo cursor" src="{% static 'images/1.jpeg' %}" style="width:100%" onclick="currentSlide(1)" alt="Günlere Göre Tweet Duygu Durumu İstatistiği">
+      <div class="column" >
+        <img class="demo cursor" src="{% static 'images/1.jpeg' %}" style="width:100%"  onclick="currentSlide(1)" alt="Günlere Göre Tweet Duygu Durumu İstatistiği">
       </div>
       <div class="column">
         <img class="demo cursor" src="{% static 'images/2.jpeg' %}" style="width:100%" onclick="currentSlide(2)" alt="Günlere Göre Tweet Etkileşim İstatistiği">
