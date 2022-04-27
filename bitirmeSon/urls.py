@@ -32,7 +32,7 @@ urlpatterns = [
     path("yorum/", data.views.yorum ,name='yorum'), # yorum
     path("data/", include("data.urls", namespace='data'),name="data-index"),
     path("blog/", include("blog.urls", namespace='blog'),name="blog-index"),
-    path("", include("gallery.urls"))
+    path("gallery/", include("gallery.urls", namespace='gallery'),name="gallery-index"),
    
     
 
