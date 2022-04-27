@@ -1,22 +1,23 @@
-<div class="ui attached stackable menu">
-  <div class="ui container">
-    <a class="item" href="{% url 'index'  %}">
-      <i class="home icon"></i> Ana Sayfa
+<div class="ui attached stackable menu" style="background-color: rgb(207, 207, 207);">
+  <div class="ui container" style="">
+    <a class=" item" href="{% url 'index'  %}">
+      <i class="home icon" style=""></i> Ana Sayfa
     </a>
     <a class="item" href="{% url 'data:main-data'  %}">
       <i class="grid layout icon"></i> Data
     </a>
-    <a class="item" href="{% url 'blog:index'  %}"> <i class="mail icon"></i> Blog </a>
-    <a class="item" href="{% url 'grafik'  %}"><i class="chart bar icon"></i> Grafikler </a>
-    <a class="item" href="{% url 'yorum'  %}"><i class="file icon"></i> Yorumlar </a>
+
+    <a class="item" href="{% url 'blog:index'  %}"> <i class="comment alternate icon"></i> Blog </a>
+    <a class="item" href="{% url 'galeri'  %}"><i class="images icon"></i> Galeri </a>
+    <a class="item" href="{% url 'yorum'  %}"><i class="file alternate icon"></i> Yorumlar </a>
     <a class="item" href="{% url 'gallery:index'  %}"><i class="image icon"></i> Galeri </a>
+
     <div class="ui simple dropdown item">
       Diğer
-      <i class="dropdown icon"></i>
-      <div class="menu">
+      <i class="dropdown icon" ></i>
+      <div class="menu" style="background-color: rgb(207, 207, 207);">
         <a class="item" href="{% url 'register'  %}"><i class="signup icon"></i> Register</a>
         <a class="item" href="{% url 'login'  %}"><i class="user icon"></i> Login</a>
-        
         <a class="item" onclick="alert('Veri giriş modülü henüz aktif değil.')"><i class="upload icon"></i> Veri Gir</a>
         <a class="item" href="{% url 'index'  %}admin"><i class="settings icon"></i> Admin</a>
         <a class="item" href="{% url 'about'  %}"><i class="globe icon"></i> Hakkımızda </a>
@@ -25,9 +26,9 @@
     </div>
     <div class="right item">
       <form action="" method="post" class="ui small form">
-        <div class="ui input">
+        <div class="ui input" >
           {% if client_ip %}
-          <p class="ui basic image label">
+          <p class="ui basic image label"  style="background-color: #C58342;">
             <img src="https://semantic-ui.com/images/avatar/small/elliot.jpg" alt="" />
             {{ client_ip }}
           </p>
@@ -40,3 +41,13 @@
     </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function(){
+    $("a").hover(function(){
+      $(this).css("background-color", "#C58342");
+      }, function(){
+      $(this).css("background-color", "#cfcfcf");
+    });
+  });
+  </script>

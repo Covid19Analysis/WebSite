@@ -27,8 +27,8 @@
                     <i aria-hidden="true" class="svg external icon">
                     <span class="i-w"><span class="i-c"><svg style="width:100%;height:100%" viewBox="0 0 512 512"></svg></span></span>
                     </i>Daha fazla</a>
-                <a href="" target="_self" data-tooltip="Accelerated Mobile Pages" data-inverted="true" class="ui secondary icon button">
-                    <i aria-hidden="true" class="edit icon ">
+                <a href="" target="_self" data-tooltip="Accelerated Mobile Pages" data-inverted="true" class="ui secondary icon button" style="background-color: #C58342;">
+                    <i aria-hidden="true" class="edit icon " >
                         <span class="i-w"><span class="i-c"><svg style="width:70%;height:100%" viewBox="0 0 320 512"></svg></span></span>
                     </i> Düzenle</a>
                 <a href="" target="_self" class="ui red button">
@@ -36,7 +36,7 @@
                       <span class="i-w"><span class="i-c"></span></span>
                     </i>Beğen</a>
                     <a class="ui teal image label" href="mailto:{{ post.user.email }}">
-                      <img src="{% static 'nan.jpg' %}">
+                      <img src="{% static 'static_project/nan.jpg' %}">
                       {{ post.user.get_short_name }}
                       <div class="detail">{{ post.user }}</div>
                     </a>
@@ -54,9 +54,9 @@
 
         <section class="ui basic vertical segment sidebar-widget widget recent-posts-3 widget_recent_entries">
           <h2 class="ui header">Son Gönderiler</h2>
-          <ul class="ui fluid vertical default bulletless list">
+          <ul class="ui fluid vertical default bulletless list"  >
             {% for post in posts %}
-            <li class="item"> <a href="" class="header">{{ post.title }}</a> <span class="post-date description">{{ post.publish_date}}</span></li>
+            <li class="item"  > <a  href="" class="header" >{{ post.title }}</a> <span class="post-date description">{{ post.publish_date}}</span></li>
             {% endfor %}
           </ul>
         </section>

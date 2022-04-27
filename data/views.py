@@ -124,12 +124,12 @@ def country(request):
         
     }
     return render(request, "countries.html", context)
-def grafik(request):
+def galeri(request):
     context = {
         
         "client_ip": get_client_ip(request),
     }
-    return render(request, "grafik.html", context)
+    return render(request, "galeri.html", context)
 
 def yorum(request):
     context = {
@@ -234,6 +234,7 @@ def chart_select_view(request):
         "data": data,
         "sumOfdata": toplam_veri,
         "meanOfdata": ortalama_veri,
+        "client_ip": get_client_ip(request),
     }
     return render(request, template_name=template_name, context=context)
 
