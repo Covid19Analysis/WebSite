@@ -43,16 +43,16 @@
       <div class="mySlides">
         <div class="numbertext"></div>
           <img src="{% static 'images/grafik4.png' %}" style="width:80%; margin-left: 9%;">
-      </div>
-      <div class="mySlides">
+    </div>
+    <div class="mySlides">
         <div class="numbertext"></div>
           <img src="{% static 'images/bulut.jpeg' %}" style="width:70%; margin-left: 14%;">
-      </div>
+    </div>
      
   
    
   
-    <!-- Next and previous buttons -->
+    
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
   
@@ -92,7 +92,71 @@
      
     
     </div>
+  <!-- 
   </div>
+  <div class="ui container">
+    <br> deneme 5 <br>
+      
+    <div class="gallery">
+      <a target="_blank" href="{% static 'images/5.jpeg' %}">
+        <img src="{% static 'images/5.jpeg' %}" alt="Cinque Terre" width="800" height="700">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+    
+    <div class="gallery">
+      <a target="_blank" href="{% static 'images/5.jpeg' %}">
+        <img src="{% static 'images/5.jpeg' %}" alt="Forest" width="800" height="700">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+    
+    <div class="gallery">
+      <a target="_blank" href="{% static 'images/5.jpeg' %}">
+        <img src="{% static 'images/5.jpeg' %}" alt="Northern Lights" width="800" height="700">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+    
+    <div class="gallery">
+      <a target="_blank" href="{% static 'images/5.jpeg' %}">
+        <img src="{% static 'images/5.jpeg' %}" alt="Mountains" width="800" height="700">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+    <div class="gallery">
+      <a target="_blank" href="{% static 'images/5.jpeg' %}">
+        <img src="{% static 'images/5.jpeg' %}" alt="Mountains" width="800" height="700">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+    <div class="gallery">
+      <a target="_blank" href="{% static 'images/5.jpeg' %}">
+        <img src="{% static 'images/5.jpeg' %}" alt="Mountains" width="800" height="700">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+    <div class="gallery">
+      <a target="_blank" href="{% static 'images/5.jpeg' %}">
+        <img src="{% static 'images/5.jpeg' %}" alt="Mountains" width="800" height="700">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+    <div class="gallery">
+      <a target="_blank" href="{% static 'images/5.jpeg' %}">
+        <img src="{% static 'images/5.jpeg' %}" alt="Mountains" width="800" height="700">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+    <hr>
+    <br> deneme <br>
+    <br> <br>
+    <br> <br>
+    <br> <br>
+    <br> <br>
+    <br> <br>
+
+  </div>Next and previous buttons -->
   <style>
     body {
       font-family: Arial;
@@ -196,6 +260,31 @@
     .demo:hover {
       opacity: 1;
     }
+
+    /* photo gal*/
+    .gallery {
+  display:  inline-block;
+  margin: 5px;
+  margin-left: 17px;
+  border: 1px solid #ccc;
+
+  width: 345px;
+  height: 400;
+}
+
+.gallery:hover {
+  border: 1px solid #777;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
     </style>
  
     
