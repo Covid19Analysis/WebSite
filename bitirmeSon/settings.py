@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     "data",
     "blog",
     "bitirmeSon",
+    "gallery",
+    
 ]
 
 MIDDLEWARE = [
