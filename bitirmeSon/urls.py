@@ -34,7 +34,7 @@ urlpatterns = [
     path("data/", include("data.urls", namespace='data'),name="data-index"),
     path("blog/", include("blog.urls", namespace='blog'),name="blog-index"),
     path("gallery/", include("gallery.urls", namespace='gallery'),name="gallery-index"),
-   
+    path("twitterdata/", include("twitterdata.urls", namespace='twitterdata'),name="twitterdata-index"),
     
 
 ]

@@ -11,7 +11,7 @@
     <a class="item" href="{% url 'galeri'  %}"><i class="images icon"></i> Galeri </a>
     <a class="item" href="{% url 'yorum'  %}"><i class="file alternate icon"></i> Analiz </a>
     <a class="item" href="{% url 'gallery:index'  %}"><i class="image icon"></i> Albüm </a>
-
+    <a class="item" href="{% url 'twitterdata:index'  %}"><i class="image icon"></i> Twitter Verileri </a>
     <div class="ui simple dropdown item">
       Diğer
       <i class="dropdown icon" ></i>
@@ -42,13 +42,3 @@
   </div>
 </div>
 
-<script>
-  $(document).ready(function(){
-    $("a").hover(function(){
-      $(this).css("background-color", "#C58342");
-      }, function(){
-      $(this).css("background-color", "#d6d6d6");
-    });
-  });
-  </script>
- 
