@@ -9,20 +9,21 @@ import csv
 from datetime import datetime
 #
 
+import plotly.express as px
 from django.shortcuts import render
 from plotly.offline import plot
 from plotly.graph_objs import Scatter
-import plotly.express as px
+
 def index(request):
     df=pd.read_csv( "analiz_edilmis_gun.csv")
-    fig = go.Figure([go.Scatter(x=df['gun'], y=df['nlikes'])])
-    fig.update_xaxes(
-    dtick="M1",
-    tickformat="%b\n%Y")
-    
-    plt_div = plot(fig, output_type='div', include_plotlyjs=False)
+    x=df['Gün']
+    y=df["Toplam Tweet"]  
+    plot_div = plot([Scatter(x=x, y=y,
+                        mode='lines', name='test',
+                        opacity=0.8, marker_color='green')],
+               output_type='div')
+    return render(request, "index.html", context={'plot_div': plot_div})
 
-    return render(request, "twitterdata.html", context={'plot_div': plot_div})
 
 
 
