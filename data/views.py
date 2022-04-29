@@ -126,14 +126,14 @@ def country(request):
     return render(request, "countries.html", context)
 def galeri(request):
     context = {
-        
+        "title": "Galeri",
         "client_ip": get_client_ip(request),
     }
     return render(request, "galeri.html", context)
 
 def yorum(request):
     context = {
-        "title": "Yorum",
+        "title": "Analiz",
         "client_ip": get_client_ip(request),
     }
     return render(request, "yorum.html", context)
