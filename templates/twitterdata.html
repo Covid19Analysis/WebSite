@@ -5,13 +5,20 @@
 {% block content %}
 
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
   <!-- if else yapısı ile hangi bar diye kotlret et-->
   {% autoescape off %}
   {{ plot_div }}
   {% endautoescape %}
-</head>
+  <py-script>
+    print("hello")
+    
+  </py-script>
+
 <body>
 
         
