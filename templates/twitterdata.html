@@ -7,24 +7,38 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
 </head>
   <!-- if else yapısı ile hangi bar diye kotlret et-->
-  {% autoescape off %}
-  {{ plot_div }}
-  {% endautoescape %}
-  <py-script>
-    print("hello")
-    
-  </py-script>
 
 <body>
-
-        
+  <div id="graf">
+    {% autoescape off %}
+    {{ plot_div }}
+    {% endautoescape %}
+  </div> 
+  <div class="ui  buttons" >
+  <form method="get" action="{% static 'veri/analiz_edilmis.csv' %}">
+      <button class="ui left attached inverted orange button" type="submit" style="margin: 5px; margin-left:35px">
+        <i class="download icon "></i>
+        Analiz Edilmiş Verileri İndir</button>
+  </form>
+ 
+  <form method="get" action="{% static 'veri/analiz_edilmis_gun.csv' %}">
+    <button class="ui right attached inverted brown button" type="submit" style="margin: 5px">
+      <i class="download icon "></i>
+      Günlere Göre Analiz Edilmiş Verileri İndir</button>
+  </form>
+</div>    
 </body>
 </html>
 
   
+<style>
+  div#graf{
+    margin-left: 15px;
+    
+  }
+</style>
  
 {% endblock content %}

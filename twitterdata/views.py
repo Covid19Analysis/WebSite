@@ -30,11 +30,13 @@ def index(request):
                         opacity=0.8, marker_color='green')],
                output_type='div')
     #bar_div=plot(px.line(df, x=x, y=df.columns, title='Günlere Göre Atılan Tweet Sayısı'),output_type='div')
-    line_div=plot(px.line(df1,x=a, y=df1.columns, title='Günlere Göre Tweet İstatistiği'),output_type='div')  
-
+    fig=px.line(df1,x=a, y=df1.columns, title='Günlere Göre Tweet İstatistiği',width=1300,height=530)
+    fig.update_layout( paper_bgcolor='#d6d6d6')
+    line_div=plot(fig,output_type='div')
+    
       
     
-    return render(request, "twitterdata.html", context={'plot_div': line_div})
+    return render(request, "twitterdata.html", context={'plot_div': line_div,"client_ip": get_client_ip(request)})
 
 
 
