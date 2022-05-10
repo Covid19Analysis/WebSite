@@ -36,7 +36,7 @@ def index(request):
     
       
     
-    return render(request, "twitterdata.html", context={'plot_div': line_div,"client_ip": get_client_ip(request)})
+    return render(request, "twitterdata.html", context={'plot_div': line_div,"client_ip": get_client_ip(request),"title": "Twitter Grafik Veri"})
 
 
 
