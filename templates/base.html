@@ -35,8 +35,18 @@
     
     {% include 'footer.html' %}
     <script src="{% static 'static_project/main.js' %}"></script>
-    
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> <!-- ploty kütüphanesinin hzılı yüklemesi için için   -->
 
+    <script>
+    $(document).ready(function(){
+      $("a").hover(function(){
+        $(this).css("background-color", "#C58342");
+        }, function(){
+        $(this).css("background-color", "#d6d6d6");
+      });
+    });
+      
+    </script>
   </body>
   
 </html>
