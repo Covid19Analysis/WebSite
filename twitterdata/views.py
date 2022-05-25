@@ -30,7 +30,7 @@ def index(request):
                         opacity=0.8, marker_color='green')],
                output_type='div')
     #bar_div=plot(px.line(df, x=x, y=df.columns, title='Günlere Göre Atılan Tweet Sayısı'),output_type='div')
-    fig=px.line(df1,x=a, y=df1.columns, title='Günlere Göre Tweet İstatistiği',width=1300,height=530)
+    fig=px.line(df1,x=a, y=df1.columns, title='2021 Kasım Ayı Günlere Göre Tweet İstatistiği',width=1300,height=530)
     fig.update_layout( paper_bgcolor='#d6d6d6')
     line_div=plot(fig,output_type='div')
     
